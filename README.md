@@ -1,65 +1,204 @@
-# 🐾 AURI – Sistema de gestión veterinaria
-## Introducción
-Nuestro proyecto **AURI** busca ser una plataforma que concentre todo lo relacionado con mascotas y veterinarias.  
-La idea es que desde un solo lugar se pueda manejar:
+# 🐾 Auri - Plataforma Integral para Gestión Veterinaria
 
-- Turnos en clínicas.  
-- Historial médico y vacunas de mascotas.  
-- Publicaciones de refugios y adopciones.  
-- Reportes y estadísticas.  
+**Plataforma integral para gestión veterinaria, turnos de urgencia, historias clínicas digitales y adopciones responsables.**
 
-Con esto queremos resolver problemas que hoy se hacen de manera desordenada, como turnos confusos, falta de registros claros o no tener un espacio central para adopciones.
+## 👥 Integrantes del Proyecto
 
----
+- **Fogel Juan Gabriel**
+- **Moraga Geronimo**
+- **Granito Quiñones Esteban Julian**
 
-## Objetivos
-- Crear un sistema modular y fácil de ampliar.  
-- Unificar en una misma plataforma a **dueños, veterinarios, refugios y administradores**.  
-- Mantener una única conexión a la base de datos para mayor consistencia.  
-- Implementar **alertas automáticas** (vacunas, turnos, adopciones).  
-- Que la interfaz sea clara y sencilla.  
-- Tener escalabilidad (ej: donaciones o pagos).  
+## 📋 Descripción del Proyecto
 
----
+Auri es una plataforma web innovadora que centraliza en un solo lugar:
+- **Localización en tiempo real** de veterinarias abiertas
+- **Gestión de turnos** de urgencia y programados
+- **Digitalización** de historias clínicas de cada mascota
+- **Publicación y seguimiento** de adopciones responsables
 
-## Alcance del sistema
+### 🎯 Objetivo General
 
-- **Dueños** → ver mascotas, historial, vacunas y turnos disponibles.  
-- **Veterinarios** → gestionar turnos, cargar info clínica y marcar disponibilidad.  
-- **Refugios** → publicar mascotas en adopción y hacer seguimiento.  
-- **Administrador** → manejar usuarios, permisos y reportes generales.  
-- **Notificaciones** → alertas automáticas cuando se cumpla una condición (ej: vacuna pendiente).  
-- **Reportes** → estadísticas básicas y posibilidad de exportar info.  
+Desarrollar una plataforma web integral que integre frontend, backend y base de datos, para optimizar la gestión de servicios veterinarios, turnos, historias clínicas digitales y adopciones de mascotas.
 
----
+### 🎯 Objetivos Específicos
 
-## Patrones de diseño aplicados
-- **Singleton (Base de datos)** → una sola conexión para todo el sistema.  
-- **Factory Method (Usuarios)** → crear distintos tipos de usuarios (dueño, veterinario, refugio, admin).  
-- **Observer (Alertas/Notificaciones)** → avisos automáticos sobre cambios de estado.  
-- **Facade (Historial clínico)** → acceso simple a la info médica de cada mascota.  
-- **Strategy (Pagos/Reservas)** → opcional para soportar distintos métodos de pago o reserva.  
+- Implementar un mapa interactivo que muestre en tiempo real veterinarias abiertas, cerradas y de guardia
+- Permitir la reserva ágil y centralizada de turnos (urgencia y programados)
+- Gestionar y consultar historias clínicas digitales de mascotas (vacunas, consultas, diagnósticos, tratamientos)
+- Brindar a refugios la capacidad de publicar mascotas en adopción y registrar su seguimiento post-adopción
+- Generar reportes en PDF/XLS de información relevante (turnos, vacunas pendientes, adopciones por estado)
 
----
+## 🚀 Plan de Desarrollo (Avance Gradual)
 
-## Tecnologías sugeridas
-- **Backend:** Python (Flask/Django) o Node.js (Express).  
-- **Base de datos:** MySQL / PostgreSQL.  
-- **Frontend:** React o similar.  
-- **Control de versiones:** Git + GitHub.  
-- **Testing:** Pytest / Jest (pruebas unitarias básicas).
+### **Fase 1: Fundamentos y Estructura Base** ⚙️
+- [x] Estructura inicial del proyecto
+- [ ] Configuración del entorno de desarrollo (React + Vite, Node.js + Express)
+- [ ] Configuración de base de datos (PostgreSQL/SQLite)
+- [ ] Configuración de Sequelize ORM
+- [ ] Sistema de autenticación con roles (Tutor, Veterinario, Refugio, Admin)
 
----
+### **Fase 2: Módulo de Usuarios y Mascotas** 👥🐕
+- [ ] ABM de usuarios (Tutores, Veterinarios, Refugios, Admins)
+- [ ] ABM de mascotas
+- [ ] Relación usuario-mascota
+- [ ] Perfiles de usuario según rol
+- [ ] Búsqueda y filtros
 
-## Conclusión
-**AURI** busca modernizar la gestión veterinaria y de adopciones en un sistema único, fácil de usar y escalable.  
-Aplicando patrones de diseño y buenas prácticas.  
+### **Fase 3: Módulo de Veterinarias** 🏥
+- [ ] ABM de veterinarias
+- [ ] Gestión de estados (abierta, cerrada, guardia)
+- [ ] Información de contacto y horarios
+- [ ] Integración con mapa interactivo (Leaflet)
 
----
+### **Fase 4: Mapa Interactivo** 🗺️
+- [ ] Implementación de Leaflet
+- [ ] Visualización de veterinarias en mapa
+- [ ] Filtros por estado (abierta/cerrada/guardia)
+- [ ] Información detallada al hacer clic
+- [ ] Geolocalización del usuario
 
-## 👥 Integrantes
+### **Fase 5: Sistema de Turnos y Agenda** 📅
+- [ ] ABM de turnos
+- [ ] Agenda de turnos con gestión de urgencias
+- [ ] Vista de agenda diaria/semanal/mensual
+- [ ] Asignación de turnos a veterinarias
+- [ ] Validaciones de disponibilidad
 
-- [Juan Gabriel Fogel](https://github.com/JuanFogel)
-- [Geronimo Moraga](https://github.com/nenol)
-- [Esteban Julian Granito Quiñones](https://github.com/estebanqui11)
+### **Fase 6: Historias Clínicas Digitales** 📋
+- [ ] ABM de historias clínicas
+- [ ] Carga y consulta por mascota
+- [ ] Registro de vacunas
+- [ ] Registro de consultas, diagnósticos y tratamientos
+- [ ] Archivos adjuntos (opcional para MVP)
+
+### **Fase 7: Módulo de Adopciones** 🐾
+- [ ] ABM de adopciones
+- [ ] Publicación de mascotas en adopción
+- [ ] Registro de seguimientos básicos post-adopción
+- [ ] Gestión de estados de adopción
+- [ ] Perfil de refugio
+
+### **Fase 8: Reportes** 📊
+- [ ] Generación de reportes en PDF
+- [ ] Generación de reportes en XLS
+- [ ] Reportes de turnos
+- [ ] Reportes de vacunas pendientes
+- [ ] Reportes de adopciones por estado
+
+### **Fase 9: Optimización y Despliegue** ✨
+- [ ] Optimización de rendimiento
+- [ ] Pruebas con Postman (API)
+- [ ] Despliegue en Render (Backend)
+- [ ] Despliegue en Vercel/Netlify (Frontend)
+- [ ] Documentación final
+
+## 🛠️ Stack Tecnológico
+
+### Frontend
+- **React** + **Vite** - Framework y build tool
+- **Tailwind CSS** - Estilos y diseño
+- **Leaflet** - Mapa interactivo
+
+### Backend
+- **Node.js** + **Express** - Servidor y API REST
+- **Sequelize** - ORM para gestión de base de datos
+
+### Base de Datos
+- **PostgreSQL** - Base de datos para entorno productivo
+- **SQLite** - Base de datos opcional para desarrollo
+
+### Despliegue
+- **Render** - Hosting de API (Backend)
+- **Vercel/Netlify** - Hosting de Frontend
+
+### Herramientas de Desarrollo
+- **GitHub** - Control de versiones y repositorio
+- **Jira** - Gestión de tareas y sprints
+- **Postman** - Pruebas y documentación de API
+
+## 📁 Estructura del Proyecto
+
+```
+auri-veterinaria/
+├── README.md
+├── .gitignore
+├── docs/                    # Documentación del proyecto
+│   ├── API.md              # Documentación de endpoints
+│   ├── DATABASE.md         # Esquema de base de datos
+│   └── DEPLOYMENT.md       # Guía de despliegue
+├── frontend/                # Aplicación React + Vite
+│   ├── src/
+│   │   ├── components/     # Componentes reutilizables
+│   │   ├── pages/          # Páginas de la aplicación
+│   │   ├── services/      # Servicios API
+│   │   ├── hooks/          # Custom hooks
+│   │   ├── context/        # Context API
+│   │   ├── utils/          # Utilidades
+│   │   ├── styles/         # Estilos globales
+│   │   └── App.jsx
+│   ├── public/
+│   ├── package.json
+│   └── vite.config.js
+├── backend/                 # API Node.js + Express
+│   ├── src/
+│   │   ├── models/         # Modelos Sequelize
+│   │   ├── routes/         # Rutas de la API
+│   │   ├── controllers/    # Controladores
+│   │   ├── middleware/     # Middlewares (auth, validación)
+│   │   ├── services/       # Lógica de negocio
+│   │   ├── utils/          # Utilidades
+│   │   └── server.js
+│   ├── migrations/         # Migraciones de BD
+│   ├── seeders/            # Datos de prueba
+│   ├── package.json
+│   └── .env.example
+└── tests/                   # Pruebas unitarias e integración
+    ├── frontend/
+    └── backend/
+```
+
+## 📦 Alcance del MVP
+
+### ✅ Incluye:
+- Sistema de autenticación con roles (Tutor, Veterinario, Refugio, Admin)
+- ABM de usuarios, mascotas, turnos, historias clínicas, veterinarias y adopciones
+- Mapa interactivo con veterinarias y su estado de disponibilidad
+- Agenda de turnos con gestión de urgencias
+- Carga y consulta de historias clínicas por mascota
+- Publicación de adopciones y registro de seguimientos básicos
+- Reportes básicos en PDF/XLS
+
+### ❌ No incluye en esta primera etapa:
+- Integración con pasarelas de pago
+- Notificaciones push o integración con WhatsApp/SMS
+- Mensajería en tiempo real entre usuarios
+- Firma digital de recetas
+
+## 🚀 Inicio Rápido
+
+Para comenzar a trabajar en el proyecto, sigue la guía completa en [docs/INICIO_RAPIDO.md](docs/INICIO_RAPIDO.md)
+
+### Resumen rápido:
+
+```bash
+# Backend
+cd backend
+npm install
+cp .env.example .env  # Editar con tus configuraciones
+npm run dev
+
+# Frontend (en otra terminal)
+cd frontend
+npm install
+npm run dev
+```
+
+## 📝 Documentación
+
+- [Guía de Inicio Rápido](docs/INICIO_RAPIDO.md) - Configuración inicial del proyecto
+- [Documentación de la API](docs/API.md) - Endpoints y uso de la API
+- [Esquema de Base de Datos](docs/DATABASE.md) - Modelos y relaciones
+- [Guía de Despliegue](docs/DEPLOYMENT.md) - Despliegue en producción
+- [Estructura del Proyecto](docs/ESTRUCTURA_PROYECTO.md) - Organización detallada
+
 
