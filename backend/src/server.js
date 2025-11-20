@@ -1,8 +1,11 @@
 import express from 'express'
 import cors from 'cors'
 import dotenv from 'dotenv'
+import { sequelize } from './config/database.js'
+import authRoutes from './routes/auth.routes.js'
 
 dotenv.config()
+console.log('DB_DIALECT desde .env =>', process.env.DB_DIALECT)
 
 const app = express()
 const PORT = process.env.PORT || 3000
@@ -14,6 +17,7 @@ app.use(cors({
 }))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+app.use('/api/auth', authRoutes) 
 
 // Routes
 app.get('/api/health', (req, res) => {
@@ -35,8 +39,26 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: 'Error interno del servidor' })
 })
 
-app.listen(PORT, () => {
-  console.log(`🚀 Servidor corriendo en http://localhost:${PORT}`)
-  console.log(`📡 API disponible en http://localhost:${PORT}/api`)
-})
+// comienza la conexion a la base de datos
+const startServer = async () => {
+  try {
+    // Probar conexión a la BD
+    await sequelize.authenticate()
+    console.log('✅ Conectado a la base de datos')
+
+    // Por ahora, sync general (luego lo cambiamos por migraciones)
+    await sequelize.sync()
+    console.log('✅ Modelos sincronizados')
+
+    app.listen(PORT, () => {
+      console.log(`🚀 Servidor corriendo en http://localhost:${PORT}`)
+      console.log(`📡 API disponible en http://localhost:${PORT}/api`)
+    })
+  } catch (error) {
+    console.error('❌ Error al iniciar el servidor:', error.message)
+    process.exit(1)
+  }
+}
+
+startServer()
 

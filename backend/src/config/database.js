@@ -1,12 +1,31 @@
-// Configuración de base de datos para Sequelize
-// Este archivo se completará durante la configuración
+import { Sequelize } from 'sequelize'
+import dotenv from 'dotenv'
 
-export default {
-  development: {
-    // Configuración para desarrollo
-  },
-  production: {
-    // Configuración para producción
-  }
+dotenv.config()
+
+let sequelize
+
+if (process.env.DB_DIALECT === 'sqlite') {
+  // Opción para desarrollo con sqlite
+  sequelize = new Sequelize({
+    dialect: 'sqlite',
+    storage: process.env.SQLITE_STORAGE || './dev.sqlite',
+    logging: false
+  })
+} else {
+  sequelize = new Sequelize(
+    process.env.DB_NAME,
+    process.env.DB_USER,
+    process.env.DB_PASSWORD,
+    {
+      host: process.env.DB_HOST,
+      port: process.env.DB_PORT,
+      dialect: process.env.DB_DIALECT || 'postgres',
+      logging: false
+    }
+  )
 }
+
+export { sequelize }
+
 

@@ -32,10 +32,10 @@ Desarrollar una plataforma web integral que integre frontend, backend y base de 
 
 ### **Fase 1: Fundamentos y Estructura Base** ⚙️
 - [x] Estructura inicial del proyecto
-- [ ] Configuración del entorno de desarrollo (React + Vite, Node.js + Express)
-- [ ] Configuración de base de datos (PostgreSQL/SQLite)
-- [ ] Configuración de Sequelize ORM
-- [ ] Sistema de autenticación con roles (Tutor, Veterinario, Refugio, Admin)
+- [x] Configuración del entorno de desarrollo (React + Vite, Node.js + Express)
+- [x] Configuración de base de datos (PostgreSQL/SQLite)
+- [x] Configuración de Sequelize ORM
+- [x] Sistema de autenticación con roles (Tutor, Veterinario, Refugio, Admin)
 
 ### **Fase 2: Módulo de Usuarios y Mascotas** 👥🐕
 - [ ] ABM de usuarios (Tutores, Veterinarios, Refugios, Admins)
