@@ -38,11 +38,11 @@ Desarrollar una plataforma web integral que integre frontend, backend y base de 
 - [x] Sistema de autenticación con roles (Tutor, Veterinario, Refugio, Admin)
 
 ### **Fase 2: Módulo de Usuarios y Mascotas** 👥🐕
-- [ ] ABM de usuarios (Tutores, Veterinarios, Refugios, Admins)
-- [ ] ABM de mascotas
-- [ ] Relación usuario-mascota
+- [x] ABM de usuarios (Tutores, Veterinarios, Refugios, Admins)
+- [x] ABM de mascotas
+- [x] Relación usuario-mascota
 - [ ] Perfiles de usuario según rol
-- [ ] Búsqueda y filtros
+- [x] Búsqueda y filtros
 
 ### **Fase 3: Módulo de Veterinarias** 🏥
 - [ ] ABM de veterinarias
@@ -67,15 +67,15 @@ Desarrollar una plataforma web integral que integre frontend, backend y base de 
 ### **Fase 6: Historias Clínicas Digitales** 📋
 - [ ] ABM de historias clínicas
 - [ ] Carga y consulta por mascota
-- [ ] Registro de vacunas
+- [x] Registro de vacunas
 - [ ] Registro de consultas, diagnósticos y tratamientos
 - [ ] Archivos adjuntos (opcional para MVP)
 
 ### **Fase 7: Módulo de Adopciones** 🐾
-- [ ] ABM de adopciones
-- [ ] Publicación de mascotas en adopción
-- [ ] Registro de seguimientos básicos post-adopción
-- [ ] Gestión de estados de adopción
+- [x] ABM de adopciones
+- [x] Publicación de mascotas en adopción
+- [x] Registro de seguimientos básicos post-adopción
+- [x] Gestión de estados de adopción
 - [ ] Perfil de refugio
 
 ### **Fase 8: Reportes** 📊
@@ -201,4 +201,13 @@ npm run dev
 - [Guía de Despliegue](docs/DEPLOYMENT.md) - Despliegue en producción
 - [Estructura del Proyecto](docs/ESTRUCTURA_PROYECTO.md) - Organización detallada
 
+## 👥 Equipo
+
+- **Fogel Juan Gabriel**
+- **Moraga Geronimo**
+- **Granito Quiñones Esteban Julian**
+
+---
+
+*Última actualización: noviembre 2025*
 
