@@ -11,3 +11,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Estilos para Leaflet */
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+}
+
+.custom-marker {
+  background: transparent;
+  border: none;
+}
+

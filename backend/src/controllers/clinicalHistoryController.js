@@ -107,7 +107,7 @@ export const getClinicalHistoriesByPet = async (req, res) => {
 
 export const createClinicalHistory = async (req, res) => {
   try {
-    const { petId, veterinaryId, date, type, diagnosis, treatment, notes, veterinarianId } = req.body
+    const { petId, veterinaryId, date, type, diagnosis, treatment, notes, veterinarianId, attachments } = req.body
 
     // Si no se proporciona veterinarianId, usar el del usuario autenticado
     const vetId = veterinarianId || req.user.id
@@ -120,7 +120,8 @@ export const createClinicalHistory = async (req, res) => {
       type: type || 'Consulta',
       diagnosis,
       treatment,
-      notes
+      notes,
+      attachments: attachments && attachments.length > 0 ? attachments : null
     })
 
     const historyWithRelations = await ClinicalHistory.findByPk(history.id, {

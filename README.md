@@ -41,35 +41,35 @@ Desarrollar una plataforma web integral que integre frontend, backend y base de 
 - [x] ABM de usuarios (Tutores, Veterinarios, Refugios, Admins)
 - [x] ABM de mascotas
 - [x] Relación usuario-mascota
-- [ ] Perfiles de usuario según rol
+- [x] Perfiles de usuario según rol
 - [x] Búsqueda y filtros
 
 ### **Fase 3: Módulo de Veterinarias** 🏥
-- [ ] ABM de veterinarias
-- [ ] Gestión de estados (abierta, cerrada, guardia)
-- [ ] Información de contacto y horarios
-- [ ] Integración con mapa interactivo (Leaflet)
+- [x] ABM de veterinarias
+- [x] Gestión de estados (abierta, cerrada, guardia)
+- [x] Información de contacto y horarios
+- [x] Integración con mapa interactivo (Leaflet)
 
 ### **Fase 4: Mapa Interactivo** 🗺️
-- [ ] Implementación de Leaflet
-- [ ] Visualización de veterinarias en mapa
-- [ ] Filtros por estado (abierta/cerrada/guardia)
-- [ ] Información detallada al hacer clic
-- [ ] Geolocalización del usuario
+- [x] Implementación de Leaflet
+- [x] Visualización de veterinarias en mapa
+- [x] Filtros por estado (abierta/cerrada/guardia)
+- [x] Información detallada al hacer clic
+- [x] Geolocalización del usuario
 
 ### **Fase 5: Sistema de Turnos y Agenda** 📅
-- [ ] ABM de turnos
-- [ ] Agenda de turnos con gestión de urgencias
-- [ ] Vista de agenda diaria/semanal/mensual
-- [ ] Asignación de turnos a veterinarias
-- [ ] Validaciones de disponibilidad
+- [x] ABM de turnos
+- [x] Agenda de turnos con gestión de urgencias
+- [x] Vista de agenda diaria/semanal/mensual
+- [x] Asignación de turnos a veterinarias
+- [x] Validaciones de disponibilidad
 
 ### **Fase 6: Historias Clínicas Digitales** 📋
-- [ ] ABM de historias clínicas
-- [ ] Carga y consulta por mascota
+- [x] ABM de historias clínicas
+- [x] Carga y consulta por mascota
 - [x] Registro de vacunas
-- [ ] Registro de consultas, diagnósticos y tratamientos
-- [ ] Archivos adjuntos (opcional para MVP)
+- [x] Registro de consultas, diagnósticos y tratamientos
+- [x] Archivos adjuntos (opcional para MVP)
 
 ### **Fase 7: Módulo de Adopciones** 🐾
 - [x] ABM de adopciones

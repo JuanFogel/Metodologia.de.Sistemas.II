@@ -52,6 +52,18 @@ const ClinicalHistory = sequelize.define('ClinicalHistory', {
   notes: {
     type: DataTypes.TEXT,
     allowNull: true
+  },
+  attachments: {
+    type: DataTypes.TEXT,
+    allowNull: true,
+    // Almacenar URLs o rutas de archivos como JSON string
+    get() {
+      const value = this.getDataValue('attachments')
+      return value ? JSON.parse(value) : []
+    },
+    set(value) {
+      this.setDataValue('attachments', value ? JSON.stringify(value) : null)
+    }
   }
 }, {
   tableName: 'clinical_histories',

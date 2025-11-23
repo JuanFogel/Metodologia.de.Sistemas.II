@@ -1,3 +1,4 @@
+import { Op } from 'sequelize'
 import Appointment from '../models/Appointment.js'
 import Pet from '../models/Pet.js'
 import Veterinary from '../models/Veterinary.js'
@@ -80,6 +81,51 @@ export const getAppointmentById = async (req, res) => {
 export const createAppointment = async (req, res) => {
   try {
     const { date, type, petId, veterinaryId, notes, userId } = req.body
+
+    // Validar que la fecha sea futura
+    const appointmentDate = new Date(date)
+    const now = new Date()
+    if (appointmentDate <= now) {
+      return res.status(400).json({ error: 'La fecha del turno debe ser futura' })
+    }
+
+    // Verificar que la veterinaria existe
+    const veterinary = await Veterinary.findByPk(veterinaryId)
+    if (!veterinary) {
+      return res.status(404).json({ error: 'Veterinaria no encontrada' })
+    }
+
+    // Verificar que la veterinaria esté abierta (solo para turnos programados)
+    if (type === 'Programado' && veterinary.status === 'Cerrada') {
+      return res.status(400).json({ 
+        error: 'No se pueden agendar turnos programados en veterinarias cerradas. Use el tipo "Urgencia" si es necesario.' 
+      })
+    }
+
+    // Verificar conflictos de horario (30 minutos de diferencia mínimo)
+    const appointmentTime = appointmentDate.getTime()
+    const timeWindow = 30 * 60 * 1000 // 30 minutos en milisegundos
+    
+    const conflictingAppointments = await Appointment.findAll({
+      where: {
+        veterinaryId,
+        status: {
+          [Op.notIn]: ['Cancelado', 'Completado']
+        },
+        date: {
+          [Op.between]: [
+            new Date(appointmentTime - timeWindow),
+            new Date(appointmentTime + timeWindow)
+          ]
+        }
+      }
+    })
+
+    if (conflictingAppointments.length > 0) {
+      return res.status(400).json({ 
+        error: 'Ya existe un turno en ese horario. Por favor, elija otro horario (mínimo 30 minutos de diferencia).' 
+      })
+    }
 
     // Si no se proporciona userId, usar el del usuario autenticado
     const tutorId = userId || req.user.id

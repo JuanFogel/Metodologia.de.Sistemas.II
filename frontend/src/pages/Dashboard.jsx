@@ -66,8 +66,8 @@ function Dashboard() {
             <p className="text-gray-600">Bienvenido a la plataforma Auri</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            <div className="bg-white overflow-hidden shadow rounded-lg">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            <Link to="/pets" className="bg-white overflow-hidden shadow rounded-lg hover:shadow-lg transition-shadow">
               <div className="p-5">
                 <div className="flex items-center">
                   <div className="flex-shrink-0">
@@ -85,9 +85,9 @@ function Dashboard() {
                   </div>
                 </div>
               </div>
-            </div>
+            </Link>
 
-            <div className="bg-white overflow-hidden shadow rounded-lg">
+            <Link to="/appointments" className="bg-white overflow-hidden shadow rounded-lg hover:shadow-lg transition-shadow">
               <div className="p-5">
                 <div className="flex items-center">
                   <div className="flex-shrink-0">
@@ -99,15 +99,35 @@ function Dashboard() {
                         Turnos
                       </dt>
                       <dd className="text-lg font-medium text-gray-900">
-                        Próximamente
+                        Ver turnos →
                       </dd>
                     </dl>
                   </div>
                 </div>
               </div>
-            </div>
+            </Link>
 
-            <div className="bg-white overflow-hidden shadow rounded-lg">
+            <Link to="/map" className="bg-white overflow-hidden shadow rounded-lg hover:shadow-lg transition-shadow">
+              <div className="p-5">
+                <div className="flex items-center">
+                  <div className="flex-shrink-0">
+                    <span className="text-3xl">🗺️</span>
+                  </div>
+                  <div className="ml-5 w-0 flex-1">
+                    <dl>
+                      <dt className="text-sm font-medium text-gray-500 truncate">
+                        Mapa de Veterinarias
+                      </dt>
+                      <dd className="text-lg font-medium text-gray-900">
+                        Ver mapa →
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+            </Link>
+
+            <Link to="/veterinaries" className="bg-white overflow-hidden shadow rounded-lg hover:shadow-lg transition-shadow">
               <div className="p-5">
                 <div className="flex items-center">
                   <div className="flex-shrink-0">
@@ -119,13 +139,93 @@ function Dashboard() {
                         Veterinarias
                       </dt>
                       <dd className="text-lg font-medium text-gray-900">
-                        Ver mapa
+                        Ver lista →
                       </dd>
                     </dl>
                   </div>
                 </div>
               </div>
-            </div>
+            </Link>
+
+            <Link to="/clinical-histories" className="bg-white overflow-hidden shadow rounded-lg hover:shadow-lg transition-shadow">
+              <div className="p-5">
+                <div className="flex items-center">
+                  <div className="flex-shrink-0">
+                    <span className="text-3xl">📋</span>
+                  </div>
+                  <div className="ml-5 w-0 flex-1">
+                    <dl>
+                      <dt className="text-sm font-medium text-gray-500 truncate">
+                        Historias Clínicas
+                      </dt>
+                      <dd className="text-lg font-medium text-gray-900">
+                        Ver historias →
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+            </Link>
+
+            <Link to="/adoptions" className="bg-white overflow-hidden shadow rounded-lg hover:shadow-lg transition-shadow">
+              <div className="p-5">
+                <div className="flex items-center">
+                  <div className="flex-shrink-0">
+                    <span className="text-3xl">🐾</span>
+                  </div>
+                  <div className="ml-5 w-0 flex-1">
+                    <dl>
+                      <dt className="text-sm font-medium text-gray-500 truncate">
+                        Adopciones
+                      </dt>
+                      <dd className="text-lg font-medium text-gray-900">
+                        Ver adopciones →
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+            </Link>
+
+            <Link to="/calendar" className="bg-white overflow-hidden shadow rounded-lg hover:shadow-lg transition-shadow">
+              <div className="p-5">
+                <div className="flex items-center">
+                  <div className="flex-shrink-0">
+                    <span className="text-3xl">📆</span>
+                  </div>
+                  <div className="ml-5 w-0 flex-1">
+                    <dl>
+                      <dt className="text-sm font-medium text-gray-500 truncate">
+                        Calendario
+                      </dt>
+                      <dd className="text-lg font-medium text-gray-900">
+                        Ver agenda →
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+            </Link>
+
+            <Link to="/profile" className="bg-white overflow-hidden shadow rounded-lg hover:shadow-lg transition-shadow">
+              <div className="p-5">
+                <div className="flex items-center">
+                  <div className="flex-shrink-0">
+                    <span className="text-3xl">👤</span>
+                  </div>
+                  <div className="ml-5 w-0 flex-1">
+                    <dl>
+                      <dt className="text-sm font-medium text-gray-500 truncate">
+                        Mi Perfil
+                      </dt>
+                      <dd className="text-lg font-medium text-gray-900">
+                        Ver perfil →
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+            </Link>
           </div>
 
           <div className="bg-white shadow rounded-lg">
