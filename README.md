@@ -76,14 +76,14 @@ Desarrollar una plataforma web integral que integre frontend, backend y base de 
 - [x] Publicación de mascotas en adopción
 - [x] Registro de seguimientos básicos post-adopción
 - [x] Gestión de estados de adopción
-- [ ] Perfil de refugio
+- [x] Perfil de refugio
 
 ### **Fase 8: Reportes** 📊
 - [ ] Generación de reportes en PDF
 - [ ] Generación de reportes en XLS
-- [ ] Reportes de turnos
-- [ ] Reportes de vacunas pendientes
-- [ ] Reportes de adopciones por estado
+- [x] Reportes de turnos
+- [x] Reportes de vacunas pendientes
+- [x] Reportes de adopciones por estado
 
 ### **Fase 9: Optimización y Despliegue** ✨
 - [ ] Optimización de rendimiento
@@ -166,7 +166,7 @@ auri-veterinaria/
 - Agenda de turnos con gestión de urgencias
 - Carga y consulta de historias clínicas por mascota
 - Publicación de adopciones y registro de seguimientos básicos
-- Reportes básicos en PDF/XLS
+- Reportes básicos de turnos, adopciones y vacunas pendientes (exportación a PDF/XLS en desarrollo)
 
 ### ❌ No incluye en esta primera etapa:
 - Integración con pasarelas de pago

@@ -1,7 +1,7 @@
 # 📊 Resumen de Progreso - Proyecto Auri
 
-**Fecha de actualización:** Diciembre 2024  
-**Estado general:** ~85% completado
+**Fecha de actualización:** Noviembre 2025  
+**Estado general:** ~90% completado
 
 ---
 
@@ -147,11 +147,10 @@ Todos los controladores y rutas implementados:
 - [ ] Agregar vista de turnos de la mascota
 - **Archivos a crear/modificar:** `frontend/src/pages/PetDetail.jsx`, `frontend/src/pages/Pets.jsx`
 
-#### 5. **Perfil de Refugio** (Fase 7 - Pendiente)
-- [ ] Página especializada para refugios
-- [ ] Estadísticas de adopciones
-- [ ] Gestión centralizada de mascotas en adopción
-- **Archivos a crear:** `frontend/src/pages/ShelterDashboard.jsx`
+#### 5. **Mejoras en Perfil de Refugio** (Fase 7 - Opcional)
+- [ ] Dashboard específico para refugios con estadísticas de adopciones
+- [ ] Vista consolidada de todas las mascotas del refugio y su estado de adopción
+- **Archivos a crear (opcional):** `frontend/src/pages/ShelterDashboard.jsx`
 
 ### 📝 **PRIORIDAD BAJA**
 
@@ -190,8 +189,8 @@ Todos los controladores y rutas implementados:
 | **Mapa Interactivo** | N/A | ✅ 100% | ✅ 100% |
 | **Turnos** | ✅ 100% | ✅ 100% | ✅ 100% |
 | **Historias Clínicas** | ✅ 100% | ✅ 95% | ✅ 98% |
-| **Adopciones** | ✅ 100% | ✅ 90% | ✅ 95% |
-| **Reportes** | ❌ 0% | ❌ 0% | ❌ 0% |
+| **Adopciones** | ✅ 100% | ✅ 95% | ✅ 98% |
+| **Reportes** | ✅ 60% | ✅ 60% | ✅ 60% |
 | **Despliegue** | ❌ 0% | ❌ 0% | ❌ 0% |
 
 ---
@@ -207,11 +206,12 @@ Todos los controladores y rutas implementados:
 6. ✅ **Completado:** Vista de calendario/agenda avanzada
 7. ✅ **Completado:** Validaciones de disponibilidad en turnos
 8. ✅ **Completado:** Archivos adjuntos en historias clínicas
+9. ✅ **Completado:** Reportes visuales de turnos, adopciones y vacunas pendientes
 
 ### **Corto Plazo (Próximas 2 semanas):**
-1. Implementar sistema de reportes (PDF/XLS)
+1. Implementar exportación de reportes (PDF/XLS)
 2. Mejorar gestión de mascotas (editar, detalle)
-3. Crear perfil especializado para refugios
+3. (Opcional) Crear dashboard especializado para refugios
 
 ### **Mediano Plazo (Próximo mes):**
 1. Optimización y pruebas
@@ -256,36 +256,43 @@ Todos los controladores y rutas implementados:
 ```
 frontend/src/
 ├── components/
-│   └── MapView.jsx          # Componente de mapa
+│   └── MapView.jsx           # Componente de mapa
 ├── pages/
-│   ├── Map.jsx              # Página del mapa
-│   ├── Appointments.jsx     # Página de turnos
+│   ├── Map.jsx               # Página del mapa
+│   ├── Appointments.jsx      # Página de turnos
 │   ├── ClinicalHistories.jsx # Página de historias
-│   ├── Veterinaries.jsx    # Página de veterinarias
-│   ├── Adoptions.jsx       # Página de adopciones
-│   ├── Profile.jsx         # NUEVO - Perfil de usuario
-│   └── Calendar.jsx        # NUEVO - Calendario/agenda
+│   ├── Veterinaries.jsx      # Página de veterinarias
+│   ├── Adoptions.jsx         # Página de adopciones
+│   ├── Profile.jsx           # NUEVO - Perfil de usuario
+│   ├── Calendar.jsx          # NUEVO - Calendario/agenda
+│   └── VaccineReports.jsx    # NUEVO - Reporte de vacunas pendientes
 
 backend/src/
 ├── controllers/
-│   ├── userController.js    # ACTUALIZADO - Agregado changePassword
-│   └── appointmentController.js # ACTUALIZADO - Validaciones de disponibilidad
+│   ├── userController.js          # ACTUALIZADO - Agregado changePassword
+│   ├── appointmentController.js   # ACTUALIZADO - Validaciones de disponibilidad
+│   ├── adoptionController.js      # NUEVO - Lógica de adopciones y seguimientos
+│   └── vaccineController.js       # NUEVO - Lógica de vacunas y próximas dosis
 ├── models/
-│   └── ClinicalHistory.js   # ACTUALIZADO - Campo attachments
+│   └── ClinicalHistory.js         # ACTUALIZADO - Campo attachments
 └── routes/
-    └── userRoutes.js        # ACTUALIZADO - Ruta de cambio de contraseña
+    ├── userRoutes.js              # ACTUALIZADO - Ruta de cambio de contraseña
+    ├── adoptionRoutes.js          # NUEVO - Rutas de adopciones
+    └── vaccineRoutes.js           # NUEVO - Rutas de vacunas
 ```
 
 ---
 
 ## 🛠️ Cómo Continuar el Trabajo
 
-### **Para trabajar en reportes:**
-1. Instalar dependencias: `npm install pdfkit exceljs` (en backend)
-2. Crear `backend/src/controllers/reportController.js`
-3. Crear `backend/src/routes/reportRoutes.js`
-4. Agregar ruta en `backend/src/server.js`
-5. Crear `frontend/src/pages/Reports.jsx`
+### **Para trabajar en reportes (siguiente paso):**
+1. Instalar dependencias de exportación: `npm install pdfkit exceljs` (en backend)
+2. Implementar generación de PDFs/XLS a partir de los datos ya expuestos por:
+   - `GET /api/appointments`
+   - `GET /api/vaccines?upcoming=true`
+   - `GET /api/adoptions`
+3. Agregar endpoints de descarga de archivos (por ejemplo, `/api/reports/appointments/pdf`, etc.)
+4. Añadir botones "Exportar" en `Appointments.jsx`, `Adoptions.jsx` y `VaccineReports.jsx`
 
 ### **Para trabajar en mejoras de archivos adjuntos:**
 1. Instalar multer para manejo de archivos: `npm install multer`
@@ -305,13 +312,13 @@ backend/src/
 
 ---
 
-**Última actualización:** Diciembre 2024  
-**Estado:** En desarrollo activo - 85% completado  
-**Próxima fase:** Sistema de Reportes y Optimización
+**Última actualización:** Noviembre 2025  
+**Estado:** En desarrollo activo - 90% completado  
+**Próxima fase:** Exportación de reportes (PDF/XLS) y Optimización
 
 ---
 
-## 🎉 Últimas Completaciones (Diciembre 2025)
+## 🎉 Últimas Completaciones (Noviembre 2025)
 
 ### ✅ **Fase 2: Perfil de Usuario** - COMPLETADO
 - Página de perfil completa con edición de datos
@@ -332,4 +339,13 @@ backend/src/
 - Soporte para URLs de archivos
 - Visualización en historias clínicas
 - Enlaces clicables
+
+### ✅ **Fase 7: Módulo de Adopciones + Perfil de Refugio (básico)** - COMPLETADO
+- CRUD completo de adopciones con estados y seguimientos
+- Rol de refugio operativo y visible en el perfil de usuario y en las adopciones
+
+### ✅ **Fase 8: Reportes (nivel pantalla)** - COMPLETADO
+- Reporte visual de turnos (páginas `Appointments` y `Calendar`)
+- Reporte visual de adopciones por estado (`Adoptions`)
+- Reporte visual de vacunas pendientes (`VaccineReports`)
 

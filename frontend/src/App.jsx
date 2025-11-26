@@ -11,6 +11,7 @@ import Veterinaries from './pages/Veterinaries.jsx'
 import Adoptions from './pages/Adoptions.jsx'
 import Profile from './pages/Profile.jsx'
 import Calendar from './pages/Calendar.jsx'
+import VaccineReports from './pages/VaccineReports.jsx'
 
 function ProtectedRoute({ children }) {
   const { user, loading } = useAuth()
@@ -77,6 +78,11 @@ function App() {
           <Route path="/calendar" element={
             <ProtectedRoute>
               <Calendar />
+            </ProtectedRoute>
+          } />
+          <Route path="/reports/vaccines" element={
+            <ProtectedRoute>
+              <VaccineReports />
             </ProtectedRoute>
           } />
         </Routes>
