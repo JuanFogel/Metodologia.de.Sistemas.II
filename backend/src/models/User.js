@@ -35,11 +35,14 @@ const User = sequelize.define('User', {
     type: DataTypes.STRING,
     allowNull: true
   },
-  role: {
-    type: DataTypes.ENUM('Tutor', 'Veterinario', 'Refugio', 'Admin'),
-    allowNull: false,
-    defaultValue: 'Tutor'
+  role: { 
+  type: DataTypes.STRING,
+  allowNull: false,
+  defaultValue: 'Tutor',
+  validate: {
+    isIn: [['Tutor', 'Veterinario', 'Refugio', 'Admin']]
   }
+}
 }, {
   tableName: 'users',
   timestamps: true,

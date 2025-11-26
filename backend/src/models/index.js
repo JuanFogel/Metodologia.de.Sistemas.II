@@ -6,6 +6,7 @@ import ClinicalHistory from './ClinicalHistory.js'
 import Vaccine from './Vaccine.js'
 import Adoption from './Adoption.js'
 import AdoptionFollowUp from './AdoptionFollowUp.js'
+import File from './File.js'
 
 // Definir relaciones
 User.hasMany(Pet, { foreignKey: 'userId', as: 'pets' })
@@ -46,6 +47,11 @@ Adoption.belongsTo(User, { foreignKey: 'adopterId', as: 'adopter' })
 
 Adoption.hasMany(AdoptionFollowUp, { foreignKey: 'adoptionId', as: 'followUps' })
 AdoptionFollowUp.belongsTo(Adoption, { foreignKey: 'adoptionId', as: 'adoption' })
+// Archivo pertenece al tutor
+File.belongsTo(User, { as: 'fileTutor', foreignKey: 'tutorId' })
+
+// Archivo fue subido por un usuario
+File.belongsTo(User, { as: 'uploader', foreignKey: 'uploadedBy' })
 
 export {
   User,
@@ -55,5 +61,6 @@ export {
   ClinicalHistory,
   Vaccine,
   Adoption,
-  AdoptionFollowUp
+  AdoptionFollowUp,
+  File
 }
