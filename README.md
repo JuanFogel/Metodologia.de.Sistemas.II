@@ -116,6 +116,32 @@ Desarrollar una plataforma web integral que integre frontend, backend y base de 
 - **Jira** - Gestión de tareas y sprints
 - **Postman** - Pruebas y documentación de API
 
+
+## 🧩 Arquitectura y Patrones de Diseño
+
+### ✔️ Observer
+Se implementa en el frontend mediante React Context API. El `AuthProvider` actúa como sujeto
+observable y los componentes que consumen el contexto son observadores. Cuando cambia el estado
+del usuario (login, logout o actualización), React notifica automáticamente a todos los componentes
+suscritos a través del mecanismo de re-renderizado.
+
+### ✔️ Facade
+Se aplica en el backend a través de los servicios y controladores, que encapsulan lógica compleja
+como validaciones, hashing, manejo de JWT y consultas a base de datos. El controlador utiliza una
+interfaz sencilla (`login()`, `register()`, `logout()`) sin conocer los detalles internos.
+
+### ✔️ Strategy
+Se utilizan distintas estrategias para los flujos del usuario: iniciar sesión, registrarse y cerrar
+sesión representan comportamientos con algoritmos distintos. Cada uno se maneja de forma aislada,
+permitiendo modificar o extender la lógica sin afectar el resto del sistema.
+
+### ✔️ Beneficios
+- Separación de responsabilidades
+- Menor acoplamiento entre módulos
+- Facilidad para extender o modificar comportamientos
+- Código más mantenible y escalable
+
+
 ## 📁 Estructura del Proyecto
 
 ```
