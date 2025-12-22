@@ -4,7 +4,7 @@ import { generateToken } from '../utils/jwt.js'
 export const register = async (req, res) => {
   try {
     const { email, password, firstName, lastName, phone, role } = req.body
-
+    
     // Validar que el email no exista
     const existingUser = await User.findOne({ where: { email } })
     if (existingUser) {
@@ -36,9 +36,9 @@ export const register = async (req, res) => {
       token
     })
   } catch (error) {
-    console.error('Error en registro:', error)
-    res.status(500).json({ error: 'Error al registrar usuario', details: error.message })
-  }
+  console.log("error aqui", error);
+  res.status(500).json({ error: error.message });
+}
 }
 
 export const login = async (req, res) => {

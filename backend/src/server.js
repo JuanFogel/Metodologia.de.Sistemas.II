@@ -13,6 +13,8 @@ import appointmentRoutes from './routes/appointmentRoutes.js'
 import clinicalHistoryRoutes from './routes/clinicalHistoryRoutes.js'
 import adoptionRoutes from './routes/adoptionRoutes.js'
 import vaccineRoutes from './routes/vaccineRoutes.js'
+import reportRoutes from './routes/reportRoutes.js'
+import filesRouter from './routes/files.js'
 
 dotenv.config()
 console.log('DB_DIALECT desde .env =>', process.env.DB_DIALECT || 'no definido')
@@ -47,6 +49,9 @@ app.use('/api/appointments', appointmentRoutes)
 app.use('/api/clinical-histories', clinicalHistoryRoutes)
 app.use('/api/adoptions', adoptionRoutes)
 app.use('/api/vaccines', vaccineRoutes)
+app.use('/api/reports', reportRoutes)
+app.use('/api/files', filesRouter)
+
 
 // 404 handler
 app.use((req, res) => {
