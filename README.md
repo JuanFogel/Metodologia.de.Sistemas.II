@@ -204,13 +204,15 @@ auri-veterinaria/
 
 Para comenzar a trabajar en el proyecto, sigue la guía completa en [docs/INICIO_RAPIDO.md](docs/INICIO_RAPIDO.md)
 
+**⚠️ IMPORTANTE:** Si tienes problemas configurando o migrando la base de datos, consulta la [Guía de Configuración de Base de Datos](docs/SETUP_DATABASE.md)
+
 ### Resumen rápido:
 
 ```bash
 # Backend
 cd backend
 npm install
-cp .env.example .env  # Editar con tus configuraciones
+# Crear archivo .env con las configuraciones (ver docs/SETUP_DATABASE.md)
 npm run dev
 
 # Frontend (en otra terminal)
@@ -222,6 +224,7 @@ npm run dev
 ## 📝 Documentación
 
 - [Guía de Inicio Rápido](docs/INICIO_RAPIDO.md) - Configuración inicial del proyecto
+- **[Guía de Configuración de Base de Datos](docs/SETUP_DATABASE.md)** - ⭐ Configuración detallada de PostgreSQL/SQLite y migración automática
 - [Documentación de la API](docs/API.md) - Endpoints y uso de la API
 - [Esquema de Base de Datos](docs/DATABASE.md) - Modelos y relaciones
 - [Guía de Despliegue](docs/DEPLOYMENT.md) - Despliegue en producción
@@ -235,5 +238,5 @@ npm run dev
 
 ---
 
-*Última actualización: noviembre 2025*
+*Última actualización: diciembre 2025*
 
